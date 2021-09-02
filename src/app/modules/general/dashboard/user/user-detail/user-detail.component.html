@@ -1,0 +1,56 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-dark" id="navbar" xmlns="http://www.w3.org/1999/html">
+  <div class="container ">
+    <a class="navbar-brand text-white" routerLink="#">Cintai Coding</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active text-white" aria-current="page" routerLink="#">Post</a>
+        </li>
+      </ul>
+      <div class="d-flex">
+
+        <a href="/dashboard/{{user.id}}/{{user.id}}" class="nav-link active text-white">
+          <span class="text-white fw-bold">Wellcome, </span>
+          <span class="text-primary fw-bold">{{user.name}}</span>
+        </a>
+
+        <a href="/" class="nav-link active text-white">
+          <span class="text-warning fw-bold">Logout</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</nav>
+
+
+<div class="row justify-content-center">
+  <div class="col-6 mb-5 ">
+    <a href="dashboard/{{user.id}}" class="btn text-primary my-2">
+      <i class="fa fa-arrow-left"></i>
+    </a>
+    <div class="card">
+      <div class="card-body bg-dark bg-opacity-10 border-5 rounded-">
+        <div class="row">
+          <div class="col-md-2 fw-bold">
+            <label>Name</label><br>
+            <label>Username</label><br>
+            <label>Email</label><br>
+            <label>Address</label><br>
+            <label>Phone</label><br>
+          </div>
+          <div class="col-md-10">
+            <label>: {{user.name}}</label><br>
+            <label>: {{user.username}}</label><br>
+            <label>: {{user.email}}</label><br>
+            <label>: {{user.address}}</label><br>
+            <label>: {{user.phone}}</label><br>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

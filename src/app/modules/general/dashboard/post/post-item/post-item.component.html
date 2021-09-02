@@ -1,0 +1,32 @@
+<div class="card border-0">
+  <div class="card-body">
+    <div class="row">
+      <div class="col-md-4">
+          <app-user-item [user]="user"></app-user-item>
+      </div>
+      <div class="col-md-8">
+        {{ post.body }}
+
+        <div class="container-fuild mt-3">
+          <span class="mx-3 text-primary">
+             <i class="fa fa-comment"></i>
+            {{comments.length}}
+          </span>
+
+          <a href="/dashboard/{{ user.id }}/post/{{post.id}}" class="btn btn-sm text-primary">
+            Detail
+          </a>
+        </div>
+      </div>
+      <div class="col-md-12">
+        <span *ngIf="commentShow">
+            <div class="row" *ngFor="let comment of comments">
+              <div class="col">
+                <app-comment-item [comment]="comment"></app-comment-item>
+              </div>
+            </div>
+          </span>
+      </div>
+    </div>
+  </div>
+</div>

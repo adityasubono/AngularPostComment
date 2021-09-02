@@ -1,0 +1,12 @@
+<div class="row justify-content-center">
+
+
+  <div *ngFor="let post of pageOfPost">
+    <app-post-item [post]="post"></app-post-item>
+  </div>
+
+  <div class="mt-3">
+    <jw-pagination [items]="post" (changePage)="onChangePage($event)"></jw-pagination>
+  </div>
+</div>
+

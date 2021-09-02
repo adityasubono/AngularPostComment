@@ -6,5 +6,6 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'PostComment';
+  title = 'angular-starter';
+  version = 'Angular version 12.2.2';
 }
