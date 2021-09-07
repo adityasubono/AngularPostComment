@@ -1,4 +1,4 @@
-export class User {
+export class Address {
   constructor(
     public street: string,
     public suite: string,

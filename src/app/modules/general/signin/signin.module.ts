@@ -4,8 +4,6 @@ import { CommonModule } from '@angular/common';
 import { SigninRoutingModule } from './signin-routing.module';
 import { SigninComponent } from './signin.component';
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
-import {HttpClientModule} from "@angular/common/http";
-
 
 @NgModule({
   declarations: [
@@ -18,6 +16,7 @@ import {HttpClientModule} from "@angular/common/http";
     CommonModule,
     SigninRoutingModule,
     ReactiveFormsModule,
+    FormsModule,
   ],
   providers: [],
 })

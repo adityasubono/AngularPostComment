@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {AbstractControl, FormBuilder, FormGroup, Validators} from "@angular/forms";
 import {Router} from "@angular/router";
 import {UserService} from "../../../services/user.service";
@@ -23,7 +23,8 @@ export class SigninComponent implements OnInit {
 
   constructor(private formBuilder: FormBuilder,
               private router: Router,
-              private userService: UserService) { }
+              private userService: UserService) {
+  }
 
   ngOnInit(): void {
     this.formGroup = this.formBuilder.group(
@@ -49,21 +50,32 @@ export class SigninComponent implements OnInit {
     );
   }
 
+  get f(): { [key: string]: AbstractControl } {
+    return this.formGroup.controls;
+  }
+
   retrieveUsers(): void {
+
+    this.submitted = true;
+
     const login = {
       username: this.formGroup.value.username,
       password: this.formGroup.value.password
     };
+
     this.userService.getUsers()
       .subscribe(
         data => {
-          console.log('data' , data)
+          console.log('data', data)
           const valid = this.search(login.username, login.password, data);
-          if (valid){
+
+
+          if (valid) {
             alert('Username dan Password Benar');
           } else {
             alert('Username dan Password Salah');
           }
+
         },
         error => {
           console.log(error);
@@ -71,19 +83,15 @@ export class SigninComponent implements OnInit {
   }
 
   // tslint:disable-next-line:typedef
-  search(username: any, password: any, datas: string | any[]){
+  search(username: any, password: any, datas: string | any[]) {
     let userData = false;
     for (const data of datas) {
       if ((data.username === username) && (data.username === password)) {
         userData = true;
-        this.router.navigate(['dashboard',data.id]);
+        this.router.navigate(['dashboard', data.id]);
       }
     }
     return userData;
-  }
-
-  get f(): { [key: string]: AbstractControl } {
-    return this.formGroup.controls;
   }
 
 }

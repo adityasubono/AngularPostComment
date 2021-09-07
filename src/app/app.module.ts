@@ -29,7 +29,7 @@ import { FooterComponent } from './components/footer/footer.component';
     DashboardModule,
     HttpClientModule,
     ReactiveFormsModule,
-    FormsModule,
+    FormsModule
   ],
   providers: [],
   exports: [
